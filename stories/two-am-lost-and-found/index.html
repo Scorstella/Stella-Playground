@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="description" content="Stella 的原创互动短篇《凌晨两点，失物招领处》。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%23101729' d='M0 0h32v32H0z'/%3E%3Cpath fill='%23dfb575' d='M7 7h18v18H7z'/%3E%3Cpath stroke='%23101729' stroke-width='2' d='M16 7v18M7 16h18'/%3E%3C/svg%3E">
+<title>凌晨两点，失物招领处 · Stella</title>
+<style>
+:root{--night:#101729;--ink:#302f35;--paper:#f3eddf;--muted:#6b6259;--amber:#dfb575;--line:#d7cbbb;--focus:#8c441e}
+*{box-sizing:border-box}
+html{background:var(--night);scroll-behavior:auto}
+body{margin:0;color:var(--paper);font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;min-width:0;background:radial-gradient(ellipse at 50% 150px,#2e3040 0,transparent 55%),var(--night)}
+body::before{content:"";position:absolute;top:0;left:0;width:100%;height:480px;pointer-events:none;background:linear-gradient(112deg,transparent 34%,#b1b8c309 34.15%,transparent 34.4%),linear-gradient(68deg,transparent 34%,#b1b8c309 34.15%,transparent 34.4%)}
+.shell{width:min(100% - 40px,720px);margin:auto;padding:38px 0 50px;position:relative}
+.masthead{text-align:center;margin-bottom:30px}
+.window{display:block;width:190px;height:104px;margin:0 auto 21px;filter:drop-shadow(0 8px 24px #e0aa5630)}
+h1{font-family:"Songti SC","Noto Serif CJK SC","SimSun",serif;font-size:clamp(24px,4.5vw,34px);line-height:1.65;font-weight:500;letter-spacing:.09em;margin:0}
+.author{font-size:13px;letter-spacing:.12em;color:#c6b69b;margin:9px 0 0}
+.ledger{background:var(--paper);color:var(--ink);padding:36px 46px 30px;position:relative;border-top:3px solid var(--amber);box-shadow:0 24px 68px #0004,0 1px 0 #fff8 inset}
+.ledger::before{content:"";position:absolute;left:23px;top:26px;bottom:26px;width:1px;background:#bd79631c;pointer-events:none}
+.page-heading{margin:0 0 22px;font-family:"Songti SC","Noto Serif CJK SC","SimSun",serif;font-size:25px;line-height:1.55;font-weight:500;letter-spacing:.08em;scroll-margin-top:24px}
+.page-heading:focus{outline:none}
+.prose{font-family:"Songti SC","Noto Serif CJK SC","SimSun",serif;font-size:18px;line-height:1.95;overflow-wrap:anywhere}
+.prose p{margin:0 0 20px}
+.prose p:last-child{margin-bottom:0}
+.prose .end-note{color:var(--muted);font-size:15px;margin-top:28px;line-height:1.8}
+.choices{margin-top:30px;border-top:1px solid var(--line)}
+button{font-family:inherit;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:#d9c9b8;font-size:16px}
+.choice{width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);color:var(--ink);background:transparent;display:flex;gap:16px;align-items:center;padding:18px 5px;min-height:60px;line-height:1.7;overflow-wrap:anywhere}
+.choice:hover{background:#e8decd}
+.choice:active{background:#dfd1bc}
+.choice svg{flex:none;width:30px;height:30px;color:#8d6943}
+.choice .arrow{margin-left:auto;flex:none;width:18px;height:18px;color:#927855}
+.choice-label{flex:1;min-width:0}
+button:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.navigation{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:30px;padding-top:21px;border-top:1px solid var(--line)}
+.navigation button{border:0;background:transparent;color:#635044;padding:9px 2px;min-height:44px;line-height:1.5;text-decoration:underline;text-decoration-color:#b7a18b;text-underline-offset:5px}
+.navigation button:hover{color:#2b241e}
+.navigation button:disabled{color:#8b8379;cursor:default;text-decoration:none}
+.navigation .home{margin-left:auto}
+.station-line{width:1px;height:42px;background:linear-gradient(#aa8b585c,transparent);margin:auto}
+.footnote{text-align:center;margin:0;font-size:12px;letter-spacing:.04em;color:#a8aaba;line-height:1.8}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+noscript{display:block;background:var(--paper);color:var(--ink);padding:20px;line-height:1.8}
+@media(max-width:480px){.shell{width:calc(100% - 28px);padding:24px 0 30px}.masthead{margin-bottom:23px}.window{width:144px;height:79px;margin-bottom:15px}h1{font-size:24px;letter-spacing:.04em}.author{margin-top:6px}.ledger{padding:27px 23px 24px}.ledger::before{left:12px;top:22px;bottom:22px}.page-heading{font-size:23px;margin-bottom:19px}.prose{font-size:17px;line-height:1.95}.prose p{margin-bottom:18px}.choice{font-size:16px;padding:16px 1px;gap:11px}.choices{margin-top:25px}.navigation{gap:8px 14px;margin-top:25px;padding-top:16px}}
+@media(max-width:350px){h1{font-size:22px}.ledger{padding-left:21px;padding-right:21px}.choice{gap:8px}.choice svg{width:26px;height:26px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{body{background:white}.shell{width:100%;padding:0}.window,.choices,.navigation,.station-line,.footnote{display:none}.masthead{color:black}.ledger{box-shadow:none;border:0}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="masthead">
+<svg class="window" viewBox="0 0 190 104" fill="none" aria-hidden="true">
+<defs><linearGradient id="lamplight" x1="95" y1="16" x2="95" y2="90" gradientUnits="userSpaceOnUse"><stop stop-color="#e8be7f"/><stop offset="1" stop-color="#80654c"/></linearGradient></defs>
+<path d="M5 101H185M20 97V6H170V97" stroke="#576071" stroke-width="2"/>
+<path d="M28 15H162V83H28Z" fill="url(#lamplight)"/>
+<path d="M28 15H162V83H28Z" stroke="#a58c6b" stroke-width="2"/>
+<path d="M95 15V83M28 47H162" stroke="#342e32" stroke-width="3"/>
+<path d="M24 86H166V93H24Z" fill="#393a43" stroke="#6b665c"/>
+<path d="M106 79L134 76L145 80H106Z" fill="#e8d8b6" opacity=".8"/>
+<path d="M39 79H78" stroke="#b8a080"/>
+</svg>
+<h1>凌晨两点，失物招领处</h1>
+<p class="author">Stella</p>
+</header>
+<main class="ledger" id="reading" aria-labelledby="page-heading">
+<h2 id="page-heading" class="page-heading" tabindex="-1">入口</h2>
+<div id="prose" class="prose"></div>
+<div id="choices" class="choices" role="group" aria-label="接下来的选择"></div>
+<nav class="navigation" aria-label="阅读导航">
+<button type="button" id="back" disabled>上一段</button>
+<button type="button" id="home" class="home" hidden>返回入口</button>
+</nav>
+</main>
+<div class="station-line" aria-hidden="true"></div>
+<p class="footnote">虚构人物与事件 · 一篇可以选择阅读路径的短篇</p>
+<p class="sr-only" role="status" aria-live="polite" id="status"></p>
+<noscript>本篇的路径选择需要浏览器启用 JavaScript。完整文字稿随离线包保存在 source 目录。</noscript>
+</div>
+<script>
+"use strict";
+const story = {
+  "entry": {
+    "title": "入口",
+    "paragraphs": [
+      "最后一班地铁已经开走，你却在站台尽头看见一扇亮着的窗。",
+      "玻璃后没有人。柜台上摆着三样东西：一把钥匙、一张车票、一块停住的表。旁边的登记簿翻在今天，字迹还没有干。",
+      "「只能认领一件。请先确认，它确实属于你。」",
+      "你摸了摸口袋。钥匙、车票、手表，你一样也没丢。",
+      "窗里的灯轻轻闪了一下。"
+    ],
+    "choices": [
+      {
+        "label": "看钥匙",
+        "target": "key"
+      },
+      {
+        "label": "看车票",
+        "target": "ticket"
+      },
+      {
+        "label": "看手表",
+        "target": "watch"
+      },
+      {
+        "label": "什么也不拿",
+        "target": "empty"
+      }
+    ],
+    "ending": false
+  },
+  "key": {
+    "title": "钥匙",
+    "paragraphs": [
+      "钥匙上贴着一小片红胶带。你小时候住过的那栋楼，每家都用这种办法区分防盗门和信箱的钥匙。",
+      "一张照片压在下面。厨房窗台上养着葱，窗外有半截被新楼遮住的水塔。你以为自己忘了水塔的颜色，现在才发现，你只是很久没想起过它。",
+      "登记簿多出一行：",
+      "「配钥匙的人已经搬走。门也换过两次。」",
+      "你把钥匙翻过来，齿纹完全陌生。"
+    ],
+    "choices": [
+      {
+        "label": "带走钥匙",
+        "target": "old-address"
+      },
+      {
+        "label": "留下钥匙，只记住照片里的水塔",
+        "target": "passing"
+      }
+    ],
+    "ending": false
+  },
+  "old-address": {
+    "title": "旧地址",
+    "paragraphs": [
+      "清晨你按照片找到了那条街。早餐店改卖鲜花，楼下多了一道门禁。",
+      "钥匙当然打不开。",
+      "你在便利店买了一个信封，把钥匙装进去。收件地址写到第三行，停了很久，最后写上自己的新住址。",
+      "回家时，信封还在你手里。你没有寄。",
+      "那天晚上，你给厨房窗台添了一盆葱。",
+      "——结束。可回「入口」走另一条路。"
+    ],
+    "choices": [],
+    "ending": true
+  },
+  "passing": {
+    "title": "路过",
+    "paragraphs": [
+      "你没有拿钥匙。出站以后，你在手机备忘录里写：红胶带，葱，蓝色水塔。",
+      "写完才想起来，水塔其实是绿色的。",
+      "你没删掉蓝色，在后面补了一个括号。",
+      "——结束。可回「入口」走另一条路。"
+    ],
+    "choices": [],
+    "ending": true
+  },
+  "ticket": {
+    "title": "车票",
+    "paragraphs": [
+      "票面没有终点，只有一行铅笔字：星期六，靠窗。",
+      "背面印着退票须知，字小得需要贴近灯看。你看见自己某一年放过鸽子的那场旅行：车已订好，行李没收，临走前回了一句「这次算了」。",
+      "你不记得当时为什么算了。也许真有一件急事，也许只是下雨。",
+      "登记簿上的说明比退票须知简短：",
+      "「本票不补发过去。」"
+    ],
+    "choices": [
+      {
+        "label": "把它当成一张新车票",
+        "target": "next-stop"
+      },
+      {
+        "label": "把它翻过来，写一点东西",
+        "target": "reverse"
+      }
+    ],
+    "ending": false
+  },
+  "next-stop": {
+    "title": "下一站",
+    "paragraphs": [
+      "你带着票上了第一班公交。司机看了一眼，说这不能用。",
+      "你刷了卡，在靠窗的位置坐下。",
+      "两站以后，一条你每天从地图上略过的河出现在窗外。有人在河边抖开一张很大的蓝床单，像把水又举高了一层。",
+      "你多坐了一站。",
+      "——结束。可回「入口」走另一条路。"
+    ],
+    "choices": [],
+    "ending": true
+  },
+  "reverse": {
+    "title": "背面",
+    "paragraphs": [
+      "你在退票须知旁边写：这个星期六，去河边。",
+      "随后又补了一行：下雨也可以。",
+      "车票没有变成有效车票。你把它夹进钱包，放在真正的交通卡后面。",
+      "——结束。可回「入口」走另一条路。"
+    ],
+    "choices": [],
+    "ending": true
+  },
+  "watch": {
+    "title": "手表",
+    "paragraphs": [
+      "表停在两点十七分。秒针没有断，只是不动。",
+      "你把它贴近耳朵，听见的却是隔壁房间的水声，有人洗完一个杯子，又洗另一个。",
+      "你很熟悉那种声音：谈话还没结束，但该说的话一时找不到，便先去洗杯子。",
+      "登记簿上没有姓名，只有两个字：",
+      "「稍等。」"
+    ],
+    "choices": [
+      {
+        "label": "把表调到现在",
+        "target": "running"
+      },
+      {
+        "label": "保留两点十七分",
+        "target": "pause"
+      }
+    ],
+    "ending": false
+  },
+  "running": {
+    "title": "走时",
+    "paragraphs": [
+      "你转动表冠，秒针开始走。水声消失了。",
+      "你终于记起那天没说完的话，却没有立刻发出去。你写了一个短句，删掉解释，又删掉辩解，剩下的刚好够一条消息。",
+      "天亮以后，你再读一遍。",
+      "这一次，没有删。",
+      "——结束。可回「入口」走另一条路。"
+    ],
+    "choices": [],
+    "ending": true
+  },
+  "pause": {
+    "title": "停顿",
+    "paragraphs": [
+      "你把表放回柜台。",
+      "水声又持续了一小会儿，然后有人把杯子倒扣在架上。原来即使你什么也不做，那个夜晚也会自己结束。",
+      "出站时你看了一眼手机。两点二十三分。",
+      "——结束。可回「入口」走另一条路。"
+    ],
+    "choices": [],
+    "ending": true
+  },
+  "empty": {
+    "title": "空手",
+    "paragraphs": [
+      "你合上登记簿。",
+      "玻璃后面终于传来声音：「没有你的？」",
+      "「没有。」",
+      "「那就好。」",
+      "你原以为对方还会再问一句，但灯灭了，窗口挂上休息的牌子。你沿着指示箭头走，出口处的清洁工把拖把移到一边，让出一条窄窄的干地。",
+      "外面刚下过雨。",
+      "你检查了一遍口袋，东西都在。",
+      "——结束。"
+    ],
+    "choices": [],
+    "ending": true
+  }
+};
+const icons = {
+key: '<circle cx="10" cy="11" r="6"/><path d="m14.5 15.5 12 12 4-4-3-3 2-2-3-3-2 2"/>',
+ticket: '<path d="M5 7h24v7a4 4 0 0 0 0 8v7H5v-7a4 4 0 0 0 0-8Z"/><path d="M21 9v3m0 4v3m0 4v3M9 12h7M9 25h7"/>',
+watch: '<circle cx="17" cy="17" r="9"/><path d="m12 9 1-6h8l1 6m-10 16 1 6h8l1-6m-5-13v5l4 2m5-4h3v4h-3"/>',
+empty: '<path d="M8 28V5h17v23M5 28h24M20 16h1"/>'
+};
+const heading = document.getElementById('page-heading');
+const prose = document.getElementById('prose');
+const choices = document.getElementById('choices');
+const back = document.getElementById('back');
+const home = document.getElementById('home');
+const path = ['entry'];
+function svg(markup, className = '') {
+  const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  icon.setAttribute('viewBox', '0 0 34 34');
+  icon.setAttribute('fill', 'none');
+  icon.setAttribute('stroke', 'currentColor');
+  icon.setAttribute('stroke-width', '1.5');
+  icon.setAttribute('stroke-linecap', 'round');
+  icon.setAttribute('stroke-linejoin', 'round');
+  icon.setAttribute('aria-hidden', 'true');
+  if (className) icon.setAttribute('class', className);
+  icon.innerHTML = markup;
+  return icon;
+}
+function render(moveFocus = true) {
+  const id = path[path.length - 1];
+  const node = story[id];
+  heading.textContent = node.title;
+  document.title = node.title + ' · 凌晨两点，失物招领处 · Stella';
+  prose.replaceChildren(...node.paragraphs.map(text => {
+    const p = document.createElement('p');
+    p.textContent = text;
+    if (text.startsWith('——结束')) p.className = 'end-note';
+    return p;
+  }));
+  choices.replaceChildren(...node.choices.map(choice => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'choice';
+    button.dataset.target = choice.target;
+    if (id === 'entry') button.append(svg(icons[choice.target]));
+    const label = document.createElement('span');
+    label.className = 'choice-label';
+    label.textContent = choice.label;
+    button.append(label, svg('<path d="M6 17h21m-8-8 8 8-8 8"/>', 'arrow'));
+    return button;
+  }));
+  choices.hidden = node.choices.length === 0;
+  back.disabled = path.length === 1;
+  home.hidden = id === 'entry';
+  document.getElementById('reading').dataset.scene = id;
+  document.getElementById('status').textContent = moveFocus ? '已到达：' + node.title : '';
+  if (moveFocus) {
+    heading.focus({preventScroll:true});
+    heading.scrollIntoView({block:'start',behavior:'auto'});
+  }
+}
+choices.addEventListener('click', event => {
+  // A rapid second pointer click can land on the newly rendered next option.
+  // Ignore multi-click continuation so one deliberate activation advances once.
+  if (event.detail > 1) return;
+  const button = event.target.closest('button[data-target]');
+  if (!button || !choices.contains(button)) return;
+  const target = button.dataset.target;
+  const current = story[path[path.length - 1]];
+  if (!current.choices.some(choice => choice.target === target)) return;
+  path.push(target);
+  render();
+});
+back.addEventListener('click', () => {
+  if (path.length > 1) {path.pop();render();}
+});
+home.addEventListener('click', () => {path.splice(0, path.length, 'entry');render();});
+render(false);
+</script>
+</body>
+</html>
